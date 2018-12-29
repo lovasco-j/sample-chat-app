@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {sendMessage, receiveMessage} from "./api/sendMessage";
+import React, { Component } from 'react';
+import { sendMessage, receiveMessage } from "./api";
 
 class App extends Component {
 
@@ -26,7 +26,7 @@ class App extends Component {
 
     componentDidMount() {
         receiveMessage((msg) => {
-            this.setState(({messages: prevMessages}) => ({
+            this.setState(({ messages: prevMessages }) => ({
                 messages: [...prevMessages, msg]
             }));
         });
